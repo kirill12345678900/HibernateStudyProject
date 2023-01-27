@@ -1,4 +1,4 @@
-package org.example.entity;
+package org.example.hibarnate1.entity;
 
 
 import javax.persistence.*;
@@ -18,6 +18,10 @@ public class Employee {
     private String department;
     @Column(name = "salary")
     private int salary;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "details_id")
+    private Detail empDetail;
 
     public Employee() {
     }
